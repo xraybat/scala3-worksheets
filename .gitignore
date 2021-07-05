@@ -11,6 +11,7 @@ target/
 
 .metals/
 .bloop/
+.bsp/
 .ammonite/
 metals.sbt
 
