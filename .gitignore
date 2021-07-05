@@ -2,3 +2,16 @@
 *.log
 out
 *.out
+
+project/metals.sbt
+project/project/
+project/target/
+
+target/
+
+.metals/
+.bloop/
+.ammonite/
+metals.sbt
+
+.vscode/
