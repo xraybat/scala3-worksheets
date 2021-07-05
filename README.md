@@ -1,5 +1,5 @@
-# scala3-workspaces
+# scala3-worksheets
 
-https://github.com/xraybat/scala3-workspaces
+https://github.com/xraybat/scala3-worksheets
 
-test workspaces for scala 3
+test worksheets for scala 3
