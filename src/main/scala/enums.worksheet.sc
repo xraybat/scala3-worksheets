@@ -1,10 +1,7 @@
-println("test")
+enum Colour:
+  case Red(intensity: Double)
+  case Green(emerald: Boolean = true)
+  case Blue(seaLike: Boolean)
 
-enum Test:
-  case Red
-  case Green
-  case Blue
-
-//abstract class Element:
-//  def i = 1
-//end Element
+val col = Colour.Red(0.5d)
+println(col)
