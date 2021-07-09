@@ -34,7 +34,7 @@ def combine =
 end combine
 
 @main def unionsErrors: Unit = 
-  program2 match
+  program2 match                  // QU??: warning here??
     case Right(value: String) => ()
     case Left(err: Error1) => ()
     case Left(err: Error2) => ()  // commenting this out would lead to compile error 'match may not be exhaustive'
