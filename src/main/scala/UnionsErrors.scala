@@ -43,3 +43,4 @@ end combine
     case Right(value: String) => ()
     case Left(err: Error1) => ()
     case Left(err: Error2) => ()  // commenting this out would lead to compile error 'match may not be exhaustive'
+end unionsErrors
