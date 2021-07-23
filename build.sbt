@@ -1,6 +1,6 @@
 val scala3Version = "3.0.0"
 
-lazy val root = project
+lazy val worksheets = project
   .in(file("."))
   .settings(
     name := "scala3-worksheets",
