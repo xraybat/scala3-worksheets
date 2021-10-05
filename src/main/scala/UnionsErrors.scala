@@ -1,4 +1,6 @@
 // to run via bloop: `bloop run -w worksheets -m unionsErrors`
+// to find main classes: `bloop autocomplete --mode=mainsfqcn --project=worksheets
+//                          --format=bash com.sourcegraph.lsif_java.LsifJava`
 
 enum Error1:
   case Code1, Code2, Code3
