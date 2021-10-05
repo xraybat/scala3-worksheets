@@ -1,4 +1,4 @@
-// to run via bloop: `bloop run -w root -m unions`
+// to run via bloop: `bloop run -w worksheets -m unions`
 
 type Id = "hello"           // singleton type
 

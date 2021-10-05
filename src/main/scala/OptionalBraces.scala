@@ -1,4 +1,4 @@
-// to run via bloop: `bloop run -w root -m optionalBraces`
+// to run via bloop: `bloop run -w worksheets -m optionalBraces`
 
 trait Controversial:
   def hello(s: String) = 

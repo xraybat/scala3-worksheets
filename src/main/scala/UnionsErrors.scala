@@ -1,3 +1,4 @@
+// to run via bloop: `bloop run -w worksheets -m unionsErrors`
 
 enum Error1:
   case Code1, Code2, Code3
@@ -43,4 +44,7 @@ end combine
     case Right(value: String) => ()
     case Left(err: Error1) => ()
     case Left(err: Error2) => ()  // commenting this out would lead to compile error 'match may not be exhaustive'
+
+  println("scala3 got here!")
+
 end unionsErrors

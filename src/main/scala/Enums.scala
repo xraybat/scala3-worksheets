@@ -1,4 +1,4 @@
-// to run via bloop: `bloop run -w root -m enums`
+// to run via bloop: `bloop run -w worksheets -m enums`
 
 enum Colour:
   case Red(intensity: Double)

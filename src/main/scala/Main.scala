@@ -1,4 +1,4 @@
-// to run via bloop: `bloop run -w root -m hello`
+// to run via bloop: `bloop run -w worksheets -m hello`
 
 @main def hello: Unit = 
   println("hello, world!")
