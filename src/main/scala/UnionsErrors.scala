@@ -10,16 +10,8 @@ enum Error2:
   case Code4, Code5, Code6
 end Error2
 
-def service0: Either[Error1, String] = Right("it's fine!")
-def service1: Either[Error1, String] = Left(Error1.Code3)
-def service2: Either[Error2, String] = Left(Error2.Code4)
-
-def program0: Either[Error1, String] = 
-  for
-    result0 <- service0
-  yield 
-    s"program0: $result0"
-end program0
+def service1: Either[Error1, String] = { println("service1"); Left(Error1.Code3) }
+def service2: Either[Error2, String] = { println("service2"); Left(Error2.Code4) }
 
 def program1: Either[Error1, String] = 
   for
@@ -47,16 +39,14 @@ end combine1and2
 
 def combineAll =    // `Either[Error1 | Error2, String]` will be inferred
   for
-    prog0 <- program0
     prog1 <- program1
     prog1and2 <- program1and2
   yield
-    s"combineAll: program0, $prog0; program1, $prog1; program1and2, $prog1and2"
+    s"combineAll: program1, $prog1; program1and2, $prog1and2"
 end combineAll
 
 @main def unionsErrors: Unit = 
   println("==="
-    + s"\nprogram0: $program0"
     + s"\nprogram1: $program1"
     + s"\nprogram1and2: $program1and2"
     + s"\ncombineAll: $combineAll"
@@ -72,10 +62,6 @@ end combineAll
     case Left(err: Error1) => println(err)
     case Left(err: Error2) => println(err)  // commenting this out would lead to compile error 'match may not be exhaustive'
 
-  program0 match
-    case Right(value: String) => println(value)
-    case Left(err: Error1) => println(err)
-  
   combineAll match
     case Right(value: String) => println(value)
     case Left(err: Error1) => println(err)
