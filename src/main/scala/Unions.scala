@@ -14,4 +14,6 @@ type Answer = "yes" | "no"  // union type
   val y: Answer = "yes"
   println(y)
 
+  println("scala3 got here!")
+
   //val z: Answer = "wot?"  // compile error
