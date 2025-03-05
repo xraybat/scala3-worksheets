@@ -1,4 +1,4 @@
-val scala3Version = "3.4.2"
+val scala3Version = "3.6.3"
 
 lazy val worksheets = project
   .in(file("."))
