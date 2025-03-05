@@ -1,3 +1,4 @@
+// to run via bloop: `bloop run -w worksheets -m opaqueTypes`
 
 object OpaqueType:
   opaque type FirstName = String
@@ -14,5 +15,6 @@ import OpaqueType.*
 
 @main def opaqueTypes: Unit = 
   println("hello")
-  //uncommen t to test: def WontCompile(s: String): LastName = s
+  //uncomment to break test:
+  //def WontCompile(s: String): LastName = s
 end opaqueTypes
