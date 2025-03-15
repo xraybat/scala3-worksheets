@@ -1,14 +1,14 @@
 trait CoordSvc(x: Int, y: Int)
 class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
 
-class X(coord: Coord):
-  export coord.{ y as _, * }
+class X(c: Coord):
+  export c.{ y as _, * }
 
-class Y(coord: Coord):
-  export coord.{ x as _, * }
+class Y(c: Coord):
+  export c.{ x as _, * }
 
-class XY(coord: Coord):
-  export coord.*
+class XY(c: Coord):
+  export c.*
 
 val x = new X(Coord(1, 0)) 
 printf("x: %d\n", x.x)
