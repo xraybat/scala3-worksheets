@@ -12,11 +12,11 @@ class XY(c: Coord):
 
 val x = new X(Coord(1, 0)) 
 printf("x: %d\n", x.x)
-//printf("x: %d\n", x.cy)   // error
+//printf("x: %d\n", x.y)   // error
 
 val y = new Y(Coord(0, 2)) 
 printf("y: %d\n", y.y)
-//printf("y: %d\n", y.cx)   // error
+//printf("y: %d\n", y.x)   // error
 
 val xy = new XY(Coord(3, 4))
 printf("xy: (%d, %d)\n", xy.x, xy.y)
