@@ -10,13 +10,13 @@ class Y(c: Coord):
 class XY(c: Coord):
   export c.*
 
-val x = new X(Coord(1, 0)) 
+val x = X(Coord(1, 0)) 
 printf("x: %d\n", x.x)
 //printf("x: %d\n", x.y)   // error
 
-val y = new Y(Coord(0, 2)) 
+val y = Y(Coord(0, 2)) 
 printf("y: %d\n", y.y)
 //printf("y: %d\n", y.x)   // error
 
-val xy = new XY(Coord(3, 4))
+val xy = XY(Coord(3, 4))
 printf("xy: (%d, %d)\n", xy.x, xy.y)
