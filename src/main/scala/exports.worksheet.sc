@@ -9,10 +9,11 @@ object Coord:
     new Coord(x, y)
 
 //val c = Coord(-101, 99)   // exception
+
 case class X(c: Coord):
   override def toString = s"X($x)"
   export c.{ y as _, * }
-//object X:
+
 case class Y(c: Coord):
   override def toString = s"Y($y)"
   export c.{ x as _, * }
