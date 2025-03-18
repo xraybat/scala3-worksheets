@@ -8,7 +8,7 @@ object Coord:
 
 //val c = Coord(-101, 99)   // exception
 
-final,case class X(c: Coord):
+final case class X(c: Coord):
   override def toString = s"X($x)"
   export c.{ y as _, * }
 
