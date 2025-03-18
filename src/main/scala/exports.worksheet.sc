@@ -2,10 +2,8 @@ trait CoordSvc(x: Int, y: Int)
 case class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
 object Coord:
   def apply(x:Int, y:Int): Coord =
-    if (x < -100) || (x > 100) then
-      throw new IllegalArgumentException(s"x($x) not in range -100 to 100")
-    if (y < -100) || (y > 100) then
-      throw new IllegalArgumentException(s"y($y) not in range -100 to 100")
+    require(x >= -100 && x <= 100)
+    require(y >= -100 && y <= 100)
     new Coord(x, y)
 
 //val c = Coord(-101, 99)   // exception
