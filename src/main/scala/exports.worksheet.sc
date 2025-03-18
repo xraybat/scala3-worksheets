@@ -1,22 +1,33 @@
 trait CoordSvc(x: Int, y: Int)
-class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
+case class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
+object Coord:
+  def apply(x:Int, y:Int): Coord =
+    if (x < -100) || (x > 100) then
+      throw new IllegalArgumentException(s"x($x) not in range -100 to 100")
+    if (y < -100) || (y > 100) then
+      throw new IllegalArgumentException(s"y($y) not in range -100 to 100")
+    new Coord(x, y)
 
-class X(c: Coord):
+//val c = Coord(-101, 99)   // exception
+case class X(c: Coord):
+  override def toString = s"X($x)"
   export c.{ y as _, * }
-
-class Y(c: Coord):
+//object X:
+case class Y(c: Coord):
+  override def toString = s"Y($y)"
   export c.{ x as _, * }
 
-class XY(c: Coord):
+case class XY(c: Coord):
+  override def toString = s"XY($x, $y)"
   export c.*
 
 val x = X(Coord(1, 0)) 
-printf("x: %d\n", x.x)
+println("x: " + x)
 //printf("x: %d\n", x.y)   // error
 
 val y = Y(Coord(0, 2)) 
-printf("y: %d\n", y.y)
+println("y: " + y)
 //printf("y: %d\n", y.x)   // error
 
 val xy = XY(Coord(3, 4))
-printf("xy: (%d, %d)\n", xy.x, xy.y)
+println("xy: " + xy)
