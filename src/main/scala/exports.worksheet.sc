@@ -1,4 +1,4 @@
-trait CoordSvc(x: Int, y: Int)
+sealed trait CoordSvc(x: Int, y: Int)
 case class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
 object Coord:
   def apply(x:Int, y:Int): Coord =
