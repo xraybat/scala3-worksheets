@@ -8,15 +8,15 @@ object Coord:
 
 //val c = Coord(-101, 99)   // exception
 
-case class X(c: Coord):
+final,case class X(c: Coord):
   override def toString = s"X($x)"
   export c.{ y as _, * }
 
-case class Y(c: Coord):
+final case class Y(c: Coord):
   override def toString = s"Y($y)"
   export c.{ x as _, * }
 
-case class XY(c: Coord):
+final case class XY(c: Coord):
   override def toString = s"XY($x, $y)"
   export c.*
 
