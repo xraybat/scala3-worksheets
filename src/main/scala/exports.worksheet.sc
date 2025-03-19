@@ -1,5 +1,5 @@
 sealed trait CoordSvc(x: Int, y: Int)
-case class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
+class Coord(val x: Int, val y: Int) extends CoordSvc(x, y)
 object Coord:
   def apply(x:Int, y:Int): Coord =
     require(x >= -100 && x <= 100)
@@ -8,15 +8,15 @@ object Coord:
 
 //val c = Coord(-101, 99)   // exception
 
-final case class X(c: Coord):
+final class X(c: Coord):
   override def toString = s"X($x)"
   export c.{ y as _, * }
 
-final case class Y(c: Coord):
+final class Y(c: Coord):
   override def toString = s"Y($y)"
   export c.{ x as _, * }
 
-final case class XY(c: Coord):
+final class XY(c: Coord):
   override def toString = s"XY($x, $y)"
   export c.*
 
